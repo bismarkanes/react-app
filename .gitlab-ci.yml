@@ -1,0 +1,10 @@
+test:
+  only:
+    - test
+  script:
+    - "echo 'Starting...'"
+  stage: test
+  tags:
+    - testing
+stages:
+  - test

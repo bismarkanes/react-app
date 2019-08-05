@@ -1,0 +1,121 @@
+.is-active {
+    display: block !important;
+}
+
+.main-menu {
+    display: none;
+    z-index: 1;
+}
+
+.nav-item {
+
+}
+
+.button-wrapper {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    z-index: 1;
+}
+
+.top-logo img {
+    left: 1rem;
+}
+
+.top-logo img:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
+}
+
+.top-social-link {
+    top: unset;
+    bottom: 1rem;
+}
+
+.color-grey-menu {
+    text-align: right;
+}
+
+.nav-item:hover {
+
+}
+
+.menu-container {
+    width: 100%;
+    position: absolute;
+    left:0;
+    top: 0;
+}
+
+.nav-button {
+    width: 3rem;
+    cursor: pointer;
+    text-align: right;
+}
+
+.bar-wrapper {
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+}
+
+.bar-menu-base {
+    height: 0.2rem;
+}
+
+.bar-menu-line-1 {
+    width: 2rem;
+}
+
+.bar-menu-line-2 {
+    width: 1rem;
+    margin-left: 1rem;
+}
+
+.color-grey-menu a {
+    color: #efefef;
+}
+
+.color-grey-menu span {
+    color: #efefef;
+    cursor: pointer;
+}
+
+.color-grey-menu p {
+    color: #efefef;
+    cursor: pointer;
+}
+
+.color-grey-menu a:hover, .color-grey-menu p:hover, .top-social-link p:hover {
+    color: white !important;
+    font-weight: bold;
+}
+
+.main-menu {
+    z-index: 2;
+    padding-bottom: 1rem;
+}
+
+/* media query */
+@media only screen and (min-width: 1024px) {
+    .button-wrapper {
+        right: 5rem;
+    }
+
+    .top-logo {
+        left: 5rem;
+    }
+
+    .color-grey-menu {
+        padding-right: 3rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .color-grey-menu {
+        padding-right: 1rem;
+    }
+}
+
+.nav-active {
+    font-weight: bold;
+}
