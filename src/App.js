@@ -3,10 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ScrollMemory from 'react-router-scroll-memory';
 import Headers from './components/headers';
 import Footers from './components/footers';
-import Home from './components/pages/home';
-import About from './components/pages/about';
-import DINProLight from './assets/fonts/DINPro-Light.ttf';
-import DINProBold from './assets/fonts/DINPro-Bold.ttf';
+import Home from './containers/pages/home';
+import About from './containers/pages/about';
 
 class App extends React.Component {
   render() {
@@ -19,24 +17,6 @@ class App extends React.Component {
           <Route path="/about" component={About} />
           <Footers />
         </Router>
-        <style>{
-          `
-            @font-face {
-              font-family: DINPro;
-              src: url(${DINProLight});
-            }
-            @font-face {
-              font-family: DINPro;
-              src: url(${DINProBold});
-              font-weight: bold;
-            }
-
-            body, button, input, select, textarea {
-              font-family: DINPro;
-            }
-          `
-        }
-        </style>
       </div>
     );
   }
