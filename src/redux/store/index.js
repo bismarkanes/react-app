@@ -1,16 +1,12 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from '../reducers/rootreducer';
+import createRootReducer from '../reducers/rootreducer';
 
 const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-/**
- * Create Redux Store
- * @param {Array} middlewares - Redux middleware
- */
-const store = (middlewares) => {
+const store = (sagaMiddleware, historyRouterMiddleWare) => {
   return createStore(
-    rootReducer,
-    storeEnhancers(middlewares ? applyMiddleware(middlewares) : null),
+    createRootReducer({ historyRouterMiddleWare, }),
+    storeEnhancers(applyMiddleware(sagaMiddleware, historyRouterMiddleWare)),
   );
 };
 

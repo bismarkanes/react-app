@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -6,10 +7,19 @@ import createStore from './redux/store';
 import rootSaga from './redux/saga/root';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { routerMiddleware, } from 'connected-react-router';
+import { createBrowserHistory, } from 'history';
 
+/*
+ * Redux middlewares
+ */
 const sagaMiddleware = createSagaMiddleware();
+const historyRouterMiddleWare = routerMiddleware(createBrowserHistory());
 
-const store = createStore(sagaMiddleware);
+/*
+ * Create redux store
+ */
+const store = createStore(sagaMiddleware, historyRouterMiddleWare);
 
 sagaMiddleware.run(rootSaga);
 
