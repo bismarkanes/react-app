@@ -1,3 +1,4 @@
+import produce from 'immer';
 import { HOME_CONTENT_REQUEST, HOME_CONTENT_SUCCESS, } from '../constants';
 
 const initialState = {
@@ -6,25 +7,21 @@ const initialState = {
   isLoading: false,
 };
 
-export default (state = initialState, action) => {
+export default produce((draft = initialState, action) => {
   /* eslint-disable indent */
   switch (action.type) {
     case HOME_CONTENT_REQUEST:
-      return {
-        ...state,
-        params: action.params,
-        isLoading: true,
-      };
+      draft.params = action.params;
+      draft.isLoading = true;
+      break;
 
     case HOME_CONTENT_SUCCESS:
-      return {
-        ...state,
-        payload: action.payload,
-        isLoading: false,
-      };
+      draft.payload = action.payload;
+      draft.isLoading = false;
+      break;
 
     default:
-      return state;
+      return draft;
   }
   /* eslint-enable indent */
-};
+});
