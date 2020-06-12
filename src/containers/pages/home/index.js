@@ -26,9 +26,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <p>----- Start Page Home -----</p>
         <p>{this.props.homeContent.isLoading ? 'Loading...' : 'This is home' }</p>
-        <p>----- Start Page Home -----</p>
       </div>
     );
   }

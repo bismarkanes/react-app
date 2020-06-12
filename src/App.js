@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Headers from './components/headers';
 import Footers from './components/footers';
@@ -16,12 +16,15 @@ class App extends React.Component {
         >
           <meta name="description" content={process.env.REACT_APP_META_SITE_DESCRIPTION} />
         </Helmet>
+        <Headers />
         <Router>
-          <Headers />
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Footers />
+          <Switch>
+            <Redirect exact path="/" to="/home" />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/about" component={About} />
+          </Switch>
         </Router>
+        <Footers />
       </div>
     );
   }

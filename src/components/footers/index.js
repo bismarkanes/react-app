@@ -6,9 +6,8 @@ class Headers extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>This is footer</p>
-      </div>
+      <React.Fragment>
+      </React.Fragment>
     );
   }
 }
