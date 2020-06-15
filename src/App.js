@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect, Link, } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Headers from './components/headers';
 import Footers from './components/footers';
@@ -18,6 +18,10 @@ class App extends React.Component {
         </Helmet>
         <Headers />
         <Router>
+          <Link className="menu-item" to="/">/</Link>
+          <Link className="menu-item" to="/home">Home</Link>
+          <Link className="menu-item" to="/about">About</Link>
+
           <Switch>
             <Redirect exact path="/" to="/home" />
             <Route exact path="/home" component={Home} />
