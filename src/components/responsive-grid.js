@@ -1,40 +1,55 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { genericDevice } from 'components/devicesize';
 import ContainerRowFlex from 'components/base/containerrowflex';
 
-export const DefaultResponsiveGrid = () => {
-  return ResponsiveGrid(2, 4, 10, 12, 0);
-};
+const StyledGrid = styled(ContainerRowFlex).attrs((props) => ({
+  align: 'flex-start'
+}))`
+  @media all and ${genericDevice.smallest} {
+    flex: 0 ${props => props.Grids.gridMobile}};
+  }
 
-export const ResponsiveGrid = (mobileGrid, tabletGrid, laptopGrid, desktopGrid, flexGrow = 0) => {
-  const Grids = {
-    gridMobile: `${(100 / mobileGrid)}%`,
-    gridTablet: `${(100 / tabletGrid)}%`,
-    gridLaptop: `${(100 / laptopGrid)}%`,
-    gridDesktop: `${(100 / desktopGrid)}%`,
-  };
-
-  return styled(ContainerRowFlex).attrs((props) => ({
-    align: 'flex-start'
-  }))`
   @media all and ${genericDevice.mobile} {
-    flex: 0 ${Grids.gridMobile};
-    flex-grow: ${flexGrow};
+    flex: 0 ${props => props.Grids.gridMobile}};
   }
 
   @media all and ${genericDevice.tablet} {
-    flex: 1 ${Grids.gridTablet};
-    flex-grow: ${flexGrow};
+    flex: 1 ${props => props.Grids.gridTablet};
   }
 
   @media all and ${genericDevice.laptop} {
-    flex: 1 ${Grids.gridLaptop};
-    flex-grow: ${flexGrow};
+    flex: 1 ${props => props.Grids.gridLaptop};
   }
 
   @media all and ${genericDevice.desktop} {
-    flex: 1 ${Grids.gridDesktop};
-    flex-grow: ${flexGrow};
+    flex: 1 ${props => props.Grids.gridDesktop};
   }
 `;
+
+export const ResponsiveGrid = (props) => {
+  return (
+    <StyledGrid Grids={{
+      gridMobile: `${(100 / props.mobileGrid)}%`,
+      gridTablet: `${(100 / props.tabletGrid)}%`,
+      gridLaptop: `${(100 / props.laptopGrid)}%`,
+      gridDesktop: `${(100 / props.desktopGrid)}%`,
+    }} {...props}>
+    </StyledGrid>
+  );
+};
+
+ResponsiveGrid.propTypes = {
+  mobileGrid: PropTypes.string,
+  tabletGrid: PropTypes.string,
+  laptopGrid: PropTypes.string,
+  desktopGrid: PropTypes.string,
+};
+
+ResponsiveGrid.defaultProps = {
+  mobileGrid: '2',
+  tabletGrid: '4',
+  laptopGrid: '6',
+  desktopGrid: '8',
 };
