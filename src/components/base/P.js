@@ -7,6 +7,8 @@ const P = styled.p`
   text-shadow: ${props => props.textShadow || (props.useTextShadow ? '-1px 2px #3c3c3c, 0 1px #3c3c3c, 1px 0 #3c3c3c, 0 -1px #3c3c3c' : 'initial')};
   letter-spacing: ${props => props.letterSpacing || 'initial'};
   text-align: ${props => props.align || 'initial'};
+  font-weight: ${props => props.fontWeight || 'normal'};
+  font-style: ${props => props.fontStyle || 'normal'};
 `;
 
 P.propTypes = {
@@ -23,15 +25,12 @@ export const Normal = styled(P)`
 
 export const Large = styled(P)`
   font-size: 18px;
-  font-weight: bold;
 `;
 
 export const ExtraLarge = styled(P)`
   font-size: 24px;
-  font-weight: bold;
 `;
 
 export const ExtraLarger = styled(P)`
   font-size: 36px;
-  font-weight: bold;
 `;
