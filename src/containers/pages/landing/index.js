@@ -1,25 +1,55 @@
 import React from 'react';
-import { useDispatch, } from 'react-redux';
-import { progressStartAction as progressStart, progressEndAction as progressEnd } from 'redux/actions/globalAction';
-import Button from 'components/base/button';
-import ContainerRowFlex from 'components/base/containerrowflex';
-import SampleGrid from 'containers/samples-grid';
+import { ResponsiveGrid } from 'components/responsive-grid';
+import { ResponsiveGridContainer } from 'components/responsive-grid-container';
+import { Normal } from 'components/base/P';
+import styled from 'styled-components';
+
+const TextContainer = styled(Normal)``;
 
 const Landing = () => {
-  const dispatch = useDispatch();
+  const ResponsiveSection = (props) => {
+    return (
+      <ResponsiveGrid
+        {...props}
+      ></ResponsiveGrid>
+    );
+  };
 
   return (
     <React.Fragment>
-      <SampleGrid/>
-      <ContainerRowFlex height="100px" backgroundColor="green" justify="center">
-        <Button onClick={() => {
-          dispatch(progressStart());
-          setTimeout(() => {
-            dispatch(progressEnd());
-          }, 1000);
-        }}>Hit me!</Button>
-      </ContainerRowFlex>
-    </React.Fragment>
+      <ResponsiveGridContainer align="flex-start">
+        <ResponsiveSection>
+          <TextContainer>
+            1. Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+          </TextContainer>
+        </ResponsiveSection>
+        <ResponsiveSection>
+          <TextContainer>
+            2. Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+          </TextContainer>
+        </ResponsiveSection>
+        <ResponsiveSection>
+          <TextContainer>
+            3. Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+          </TextContainer>
+        </ResponsiveSection>
+        <ResponsiveSection>
+          <TextContainer>
+            4. Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+          </TextContainer>
+        </ResponsiveSection>
+        <ResponsiveSection>
+          <TextContainer>
+            5. Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.  Phasellus purus.  Pellentesque tristique imperdiet tortor.  Nam euismod tellus id erat.
+          </TextContainer>
+        </ResponsiveSection>
+        <ResponsiveSection>
+          <TextContainer>
+            6. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+          </TextContainer>
+        </ResponsiveSection>
+      </ResponsiveGridContainer>
+    </React.Fragment >
   );
 };
 
