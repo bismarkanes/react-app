@@ -2,7 +2,8 @@
   "env": {
     "node": true,
     "es6": true,
-    "mocha": true
+    "mocha": true,
+    "browser": true
   },
   "extends": [
     "eslint:recommended",
@@ -32,6 +33,9 @@
     "no-eq-null": "error",
     "no-multi-spaces": "error",
     "no-return-assign": "error",
-    "prefer-promise-reject-errors": "error"
+    "prefer-promise-reject-errors": "error",
+    "indent": ["error", 2],
+    "keyword-spacing":  ["error"],
+    "space-infix-ops": ["error"]
   }
 }
