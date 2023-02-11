@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "connected-react-router": "^6.8.0",
+    "container-base": "github:bismarkanes/container-base#0.1.0",
     "core-js": "^3.6.5",
     "history": "^4.10.1",
     "immer": "^8.0.1",
