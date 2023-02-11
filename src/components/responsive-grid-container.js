@@ -1,5 +1,5 @@
 import React from 'react';
-import ContainerRowFlex from 'components/base/containerrowflex';
+import { ContainerRowFlex } from 'container-base';
 
 export const ResponsiveGridContainer = (props) => {
   return (

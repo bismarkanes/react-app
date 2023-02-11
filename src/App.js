@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useSelector, } from 'react-redux';
 import { appTitle, appDescription, } from 'config';
 import CustomRoute from 'components/customroute';
-import ContainerRowFlex from 'components/base/containerrowflex';
+import { ContainerRowFlex } from 'container-base';
 import Progress from 'components/progress';
 import { ExtraLarge, } from 'components/base/P';
 import Landing from 'containers/pages/landing';
