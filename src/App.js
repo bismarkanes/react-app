@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import { useSelector, } from 'react-redux';
 import { appTitle, appDescription, } from 'config';
 import CustomRoute from 'components/customroute';
-import { ContainerRowFlex } from 'container-base';
+import { ContainerBase } from 'container-base';
 import Progress from 'components/progress';
 import { ExtraLarge, } from 'components/base/P';
 import Landing from 'containers/pages/landing';
@@ -38,9 +38,9 @@ const App = () => {
 
           <Route path='/404' component={() => {
             return (
-              <ContainerRowFlex height="100vh" justify="center">
+              <ContainerBase height="100vh" justify="center">
                 <ExtraLarge>Not Found</ExtraLarge>
-              </ContainerRowFlex>
+              </ContainerBase>
             );
           }} />
           <Redirect to='/404' />
