@@ -1,6 +1,5 @@
 import React from 'react';
-import { ResponsiveGrid } from 'components/responsive-grid';
-import { ResponsiveGridContainer } from 'components/responsive-grid-container';
+import { ResponsiveGridContainer, ResponsiveGrid } from 'responsive-grid-container';
 import { Normal } from 'components/base/P';
 import styled from 'styled-components';
 
