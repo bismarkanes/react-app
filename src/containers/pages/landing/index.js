@@ -1,9 +1,9 @@
 import React from 'react';
 import { ResponsiveGridContainer, ResponsiveGrid } from '@bismarkanes/responsive-grid-container';
-import { Normal } from 'components/base/P';
+import { Text } from 'components/base/P';
 import styled from 'styled-components';
 
-const TextContainer = styled(Normal)``;
+const TextContainer = styled(Text)``;
 
 const Landing = () => {
   const ResponsiveSection = (props) => {

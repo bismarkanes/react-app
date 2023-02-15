@@ -1,5 +1,5 @@
 body {
-    font-family: Roboto;
+    font-family: Roboto Serif;
     font-size: 12px;
 }
 
@@ -23,6 +23,25 @@ body {
   background: #555;
 }
 
-p {
+p, ul, li {
     margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    body {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 1600px){
+    body {
+        font-size: 28px;
+    }
 }
