@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bismarkanes/responsive-grid-container": "^1.0.1",
+    "@bismarkanes/responsive-grid-container": "^1.0.3",
     "axios": "^0.21.1",
     "connected-react-router": "^6.8.0",
     "core-js": "^3.6.5",
